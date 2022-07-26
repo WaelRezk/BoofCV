@@ -1,0 +1,19 @@
+include 'examples','demonstrations','applications',
+
+        'main:boofcv-core',
+        'main:boofcv-ip','main:boofcv-io','main:boofcv-feature','main:boofcv-geo',
+        'main:boofcv-sfm','main:boofcv-reconstruction','main:boofcv-recognition','main:boofcv-simulation',
+        'main:checks','main:autocode','main:boofcv-learning',
+        'main:boofcv-ip-multiview','main:boofcv-types',
+
+        'integration:boofcv-all',
+        'integration:boofcv-javacv',"integration:boofcv-WebcamCapture",
+        'integration:boofcv-jcodec','integration:boofcv-swing',
+        'integration:boofcv-ffmpeg','integration:boofcv-pdf','integration:boofcv-kotlin'
+
+// these are packages which require external files that must be manually downloaded or configured to compile
+if (System.getenv()['ANDROID_HOME']) {
+    include 'integration:boofcv-android'
+} else {
+    logger.warn('Skipping integration/android because ANDROID_HOME has not been set!  See integration/android/readme.txt')
+}
